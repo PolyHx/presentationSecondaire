@@ -1,0 +1,258 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/androidstudio.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+			img[alt=polyhx-logo] { width: 400px; border: none!important; box-shadow: 0 0 0!important; }
+			ul {list-style-type: none!important; }
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown>
+						<script type="text/template">
+							## Programmer un jeu en Java
+							Présenté par
+
+							![polyhx-logo](./img/polyhx.png)
+						</script>
+					</section>
+				<section>
+					<section>
+						<h2>Variables</h2>
+						<p class="fragment" data-fragment-index="0" data-markdown>
+								<script type="text/template">
+									Les variables sont utile pour stocker de l'information.
+
+									Toute les variables se déclare sous la forme : `<uneType> <unNomDeVariable>;`
+								</script>
+						</p>
+						<p class="fragment" data-fragment-index="1" data-markdown>
+								<script type="text/template">
+									Les types de bases sont : 
+									- boolean
+									- int
+									- float
+									- String
+								</script>
+						</p>
+					</section>
+					<section>
+						<h3>Variables - opérateurs</h3>
+						<pre><code class="java" data-trim data-noescape>
+						int foo;
+
+						foo = 5 + 1;<span class="fragment" data-fragment-index="0">// foo contient 6</span>
+						foo = 3 - 2;<span class="fragment" data-fragment-index="0">// foo contient 1</span>
+						foo = 2 * 5;<span class="fragment" data-fragment-index="0">// foo contient 10</span>
+						foo = 4 / 2;<span class="fragment" data-fragment-index="0">// foo contient 2</span>
+						foo = 5 % 2;<span class="fragment" data-fragment-index="0">// foo contient 1</span>
+						
+						foo++;<span class="fragment" data-fragment-index="1">// foo contient 2</span>
+						foo--;<span class="fragment" data-fragment-index="2">// foo contient 1</span>
+
+						foo += 41;<span class="fragment" data-fragment-index="3">// foo contient 42</span>
+						foo -= 12;<span class="fragment" data-fragment-index="4">// foo contient 35</span>
+						foo /= 6;<span class="fragment" data-fragment-index="5">// foo contient 5</span>
+						foo *= 2;<span class="fragment" data-fragment-index="6">// foo contient 10</span>
+						foo %= 7;<span class="fragment" data-fragment-index="7">// foo contient 3</span>
+						</code></pre>
+					</section>
+					<section>
+						<h3>Variables - Mutation</h3>
+						<pre><code class="java" data-trim data-noescape>
+						int foo;                //Déclaration d'une variable
+						foo = 1;                //Affectation de valeur
+						int bar = 10;           //Déclaration et affectation
+						foo = bar + (9 / 2);    //Opération entre plusieurs variables
+
+						String baz = "Voici une chaine de caractères";
+
+						float booz = 3.141592;
+
+						boolean bool = true;
+						</code></pre>
+					</section>
+					<section>
+						<h3>Variables - exercices</h3>
+						<pre><code class="java" data-trim data-noescape>
+						int foo = 12;
+						int bar = foo = 3;
+						<span class="fragment" data-fragment-index="0">// bar et foo vont contenir 3</span>
+						String baz = "1 2 3" + " 4 5 6";
+						<span class="fragment" data-fragment-index="1">// baz contient "1 2 3 4 5 6"</span>
+						boolean test = !(false && (false || true));
+						<span class="fragment" data-fragment-index="2">// test contient true</span>
+						int mod = 12 % 6;
+						<span class="fragment" data-fragment-index="3">// mod contient 0</span>
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						## Expressions booléennes et conditions
+						Valeurs booléennes possibles:
+
+						true (vrai) et false (faux)
+
+						Une expression booléenne est une suite de valeurs booléennes modifiées par des opérateurs logiques
+						Les opérateurs logiques sont :
+						&& (et) || (ou) == (égal) < (plus petit) > (plus grand)
+					</section>
+					<section>
+						<h3>Expressions booléennes et conditions</h3>
+						<pre><code class="java" data-trim data-noescape>
+						boolean test1 = true || false;
+						// test1 contient true
+						boolean test2 = true && false;
+						// test2 contient false
+						if (test1) { // condition vrai car test1 est true
+						  if (test2) { // si test2 est vrai
+						    // on ne va pas ici car
+						    // la condition est fausse
+						  }
+						  else { // sinon (si test2 ne contient pas vrai)
+						    //on execute le else
+						  }
+						}
+						</code></pre>
+					</section>
+					<section>
+						<h3>Conditions - exercices</h3>
+						<pre><code class="java" data-trim data-noescape>
+						int test = 0;
+						
+						if (false || (false && true) || true) {
+						  test = 3;
+						}
+						else {
+						  test = 5
+						}
+						if (test > 3) {
+						  <span class="fragment" data-fragment-index="0">// Est-ce que la condition est vrai?</span>
+						  <span class="fragment" data-fragment-index="1">// Non, car test vaut 3</span>
+						}
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Boucles</h3>
+						<p>Une boucle est un morceau de code qui sera répeté un certain nombre de fois, selon une condition.</p>
+						<pre><code class="java" data-trim data-noescape>
+						int i = 0;
+
+						while (i < 100) { // condition pour la boucle
+						  i = i + 1;      // corps de la boucle
+						}
+						</code></pre>
+					</section>
+					<section>
+						<h3>Boucles - La boucle for</h3>
+						<p>Une boucle for contient à la fois une déclaration de variable, une condition de boucle et une itération</p>
+						<pre><code class="java" data-trim data-noescape>
+						for (int i = 0; i < 100; i++) {
+							//faire autre chose ici
+						}
+						</code></pre>
+					</section>
+					<section>
+						<h2>Boucles - exercices</h2>
+						<pre><code class="java" data-trim data-noescape>
+						for(int i = 1; i <= 100; i++) {
+						  if (((i % 5) == 0) && ((i % 7) == 0))
+						    System.out.print("fizzbuzz ");
+						  else if ((i % 5) == 0)
+						    System.out.print("fizz ");
+						  else if ((i % 7) == 0)
+						    System.out.print("buzz ");
+						}
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Fonctions</h2>
+					</section>
+					<section>
+						<h2>Fonctions suite</h2>
+					</section>
+					<section>
+						<h2>Fonctions exercices</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Listes</h2>
+					</section>
+					<section>
+						<h2>Listes suite</h2>
+					</section>
+					<section>
+						<h2>Listes exercices</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Boucles de jeu</h2>
+					</section>
+					<section>
+						<h2>Boucles de jeu exercices</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Frames</h2>
+					</section>
+					<section>
+						<h2>Frames Affichage</h2>
+					</section>
+					<section>
+						<h2>Frames Updates</h2>
+					</section>
+				</section>
+				<section>
+					<h2>Exemple IRL</h2>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: false,
+				control: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
