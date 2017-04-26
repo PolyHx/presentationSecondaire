@@ -1,64 +1,75 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/white.css">
+	<title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/androidstudio.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/white.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/androidstudio.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
-		<style>
-			img[alt=polyhx-logo] { width: 400px; border: none!important; box-shadow: 0 0 0!important; }
-			ul {list-style-type: none!important; }
-		</style>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section data-markdown>
-						<script type="text/template">
+	<style>
+		img[alt=polyhx-logo] {
+			width: 400px;
+			border: none!important;
+			box-shadow: 0 0 0!important;
+		}
+		
+		ul {
+			list-style-type: none!important;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-markdown>
+				<script type="text/template">
 							## Programmer un jeu en Java
 							Présenté par
 
-							![polyhx-logo](./img/polyhx.png)
+							![polyhx-logo](./img/poly.png)
+
+							![polyhx-logo](./img/LassondeHacksNoBGBlack.png)
 						</script>
-					</section>
+			</section>
+			<section>
 				<section>
-					<section>
-						<h2>Variables</h2>
-						<p class="fragment" data-fragment-index="0" data-markdown>
-								<script type="text/template">
+					<h2>Variables</h2>
+					<p class="fragment" data-fragment-index="0" data-markdown>
+						<script type="text/template">
 									Les variables sont utile pour stocker de l'information.
 
 									Toute les variables se déclare sous la forme : `<uneType> <unNomDeVariable>;`
 								</script>
-						</p>
-						<p class="fragment" data-fragment-index="1" data-markdown>
-								<script type="text/template">
+					</p>
+					<p class="fragment" data-fragment-index="1" data-markdown>
+						<script type="text/template">
 									Les types de bases sont : 
 									- boolean
 									- int
 									- float
 									- String
 								</script>
-						</p>
-					</section>
-					<section>
-						<h3>Variables - opérateurs</h3>
-						<pre><code class="java" data-trim data-noescape>
+					</p>
+				</section>
+				<section>
+					<h3>Variables - opérateurs</h3>
+					<pre><code class="java" data-trim data-noescape>
 						int foo;
 
 						foo = 5 + 1;<span class="fragment" data-fragment-index="0">// foo contient 6</span>
@@ -76,10 +87,10 @@
 						foo *= 2;<span class="fragment" data-fragment-index="6">// foo contient 10</span>
 						foo %= 7;<span class="fragment" data-fragment-index="7">// foo contient 3</span>
 						</code></pre>
-					</section>
-					<section>
-						<h3>Variables - Mutation</h3>
-						<pre><code class="java" data-trim data-noescape>
+				</section>
+				<section>
+					<h3>Variables - Mutation</h3>
+					<pre><code class="java" data-trim data-noescape>
 						int foo;                //Déclaration d'une variable
 						foo = 1;                //Affectation de valeur
 						int bar = 10;           //Déclaration et affectation
@@ -91,10 +102,10 @@
 
 						boolean bool = true;
 						</code></pre>
-					</section>
-					<section>
-						<h3>Variables - exercices</h3>
-						<pre><code class="java" data-trim data-noescape>
+				</section>
+				<section>
+					<h3>Variables - exercices</h3>
+					<pre><code class="java" data-trim data-noescape>
 						int foo = 12;
 						int bar = foo = 3;
 						<span class="fragment" data-fragment-index="0">// bar et foo vont contenir 3</span>
@@ -105,22 +116,73 @@
 						int mod = 12 % 6;
 						<span class="fragment" data-fragment-index="3">// mod contient 0</span>
 						</code></pre>
-					</section>
+				</section>
+			</section>
+			<section>
+				<section data-markdown>
+					## Expressions booléennes et conditions
+					Valeurs booléennes possibles: true (vrai) et false (faux) 
+					Une expression booléenne est une suite de valeurs booléennes modifiées par des opérateurs logiques (Algèbre de Boole)
 				</section>
 				<section>
-					<section data-markdown>
-						## Expressions booléennes et conditions
-						Valeurs booléennes possibles:
-
-						true (vrai) et false (faux)
-
-						Une expression booléenne est une suite de valeurs booléennes modifiées par des opérateurs logiques
-						Les opérateurs logiques sont :
-						&& (et) || (ou) == (égal) < (plus petit) > (plus grand)
-					</section>
-					<section>
-						<h3>Expressions booléennes et conditions</h3>
-						<pre><code class="java" data-trim data-noescape>
+					<h3>Expressions booléennes et conditions - Opérateurs</h3>
+					<table>
+						<thead>
+							<th>Comparaison</th>
+							<th>Opérateurs</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									== (égal) 
+								</td>
+								<td>
+									&& (et)
+								</td>
+							</tr>
+							<tr>
+								<td>
+									!= (non égal) 
+								</td>
+								<td>
+									|| (ou)
+								</td>
+							</tr>
+							<tr>
+								<td>
+									< (plus petit) 
+								</td>
+								<td>
+									! (non)
+								</td>
+							</tr>
+							<tr>
+								<td>
+									> (plus grand) 
+								</td>
+								<td>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<= (plus petit égal) 
+								</td>
+								<td>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									>= (plus grand égal) 
+								</td>
+								<td>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h3>Expressions booléennes et conditions</h3>
+					<pre><code class="java" data-trim data-noescape>
 						boolean test1 = true || false;
 						// test1 contient true
 						boolean test2 = true && false;
@@ -135,10 +197,10 @@
 						  }
 						}
 						</code></pre>
-					</section>
-					<section>
-						<h3>Conditions - exercices</h3>
-						<pre><code class="java" data-trim data-noescape>
+				</section>
+				<section>
+					<h3>Conditions - exercices</h3>
+					<pre><code class="java" data-trim data-noescape>
 						int test = 0;
 						
 						if (false || (false && true) || true) {
@@ -152,32 +214,42 @@
 						  <span class="fragment" data-fragment-index="1">// Non, car test vaut 3</span>
 						}
 						</code></pre>
-					</section>
 				</section>
+			</section>
+			<section>
 				<section>
-					<section>
-						<h3>Boucles</h3>
-						<p>Une boucle est un morceau de code qui sera répeté un certain nombre de fois, selon une condition.</p>
-						<pre><code class="java" data-trim data-noescape>
+					<h3>Boucles</h3>
+					<p>Une boucle <i>while</i> est un morceau de code qui sera répeté tant qu'une condition sera vraie.</p>
+					<pre><code class="java" data-trim data-noescape>
 						int i = 0;
 
 						while (i < 100) { // condition pour la boucle
 						  i = i + 1;      // corps de la boucle
 						}
 						</code></pre>
-					</section>
-					<section>
-						<h3>Boucles - La boucle for</h3>
-						<p>Une boucle for contient à la fois une déclaration de variable, une condition de boucle et une itération</p>
-						<pre><code class="java" data-trim data-noescape>
+				</section>
+				<section>
+					<h3>Boucles - La boucle for</h3>
+					<p>Une boucle <i>for</i> contient à la fois une déclaration de variable, une condition de boucle et une itération</p>
+					<pre><code class="java" data-trim data-noescape>
 						for (int i = 0; i < 100; i++) {
 							//faire autre chose ici
 						}
 						</code></pre>
-					</section>
-					<section>
-						<h2>Boucles - exercices</h2>
-						<pre><code class="java" data-trim data-noescape>
+				</section>
+				<section>
+					<h2>Boucles - exercice</h2>
+					<ul>
+						<li>Parcourir les nombres de 1 à 100</li>
+						<li>Afficher "fizz" si le nombre est divisible par 5</li>
+						<li>Afficher "buzz" si le nombre est divisible par 7</li>
+						<li>Afficher "fizzbuzz" si le nombre est divisible par 5 et par 7</li>
+						<li>Afficher le nombre sinon</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Boucles - exercices</h2>
+					<pre><code class="java" data-trim data-noescape>
 						for(int i = 1; i <= 100; i++) {
 						  if (((i % 5) == 0) && ((i % 7) == 0))
 						    System.out.print("fizzbuzz ");
@@ -185,61 +257,122 @@
 						    System.out.print("fizz ");
 						  else if ((i % 7) == 0)
 						    System.out.print("buzz ");
+						  else
+						    System.out.print(i);
 						}
 						</code></pre>
-					</section>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Fonctions</h2>
+					<p>
+						Une fonction englobe un morceau de code qui peut ensuite être réutilisé.
+						Une fonction sert surtout à créer une abstraction dans le code.
+					</p>
 				</section>
 				<section>
-					<section>
-						<h2>Fonctions</h2>
-					</section>
-					<section>
-						<h2>Fonctions suite</h2>
-					</section>
-					<section>
-						<h2>Fonctions exercices</h2>
-					</section>
+					<h2>Exemple - Pythagore</h2>
+					<pre><code class="java" data-trim data-noescape>
+						float a1 = 3.f;
+						float b1 = 4.f;
+						float c1 = Math.sqrt(a1 * a1 + b1 * b1);
+
+						float a2 = 8.f;
+						float b2 = 9.f;
+						float c2 = Math.sqrt(a2 * a2 + b2 * b2); 
+						</code></pre>
+						<p>On écrit deux fois la logique du calcul</p>
 				</section>
 				<section>
-					<section>
-						<h2>Listes</h2>
-					</section>
-					<section>
-						<h2>Listes suite</h2>
-					</section>
-					<section>
-						<h2>Listes exercices</h2>
-					</section>
+					<h2>Exemple - Pythagore(suite)</h2>
+					<pre><code class="java" data-trim data-noescape>
+						float pythagore(float a, float b) {
+							return Math.sqrt(a * a + b * b);
+						}
+						float a1 = 3.f;
+						float b1 = 4.f;
+						float c1 = pythagore(a1, b1); //Abstraction des calculs
+
+						float a2 = 8.f;
+						float b2 = 9.f;
+						float c2 = pythagore(a2, b2); //Abstraction des calculs
+						</code></pre>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Listes</h2>
+					<p>Une liste est une collection de variables.</p>
+					<p>Exemple: Une liste de nombres, une liste de mots, etc.</p>
 				</section>
 				<section>
-					<section>
-						<h2>Boucles de jeu</h2>
-					</section>
-					<section>
-						<h2>Boucles de jeu exercices</h2>
-					</section>
+					<h2>Listes problématique</h2>
+					<pre><code class="java" data-trim data-noescape>
+						string fruit1 = "Banane";
+						string fruit2 = "Pomme";
+						string fruit3 = "Kiwi";
+						string fruit4 = "Poire";
+						string fruit5 = "Orange";
+						//Etc...
+						</code></pre>
 				</section>
 				<section>
-					<section>
-						<h2>Frames</h2>
-					</section>
-					<section>
-						<h2>Frames Affichage</h2>
-					</section>
-					<section>
-						<h2>Frames Updates</h2>
-					</section>
+					<h2>Listes solution</h2>
+					<pre><code class="java" data-trim data-noescape>
+					ArrayList<string> fruits = new ArrayList<>();
+					fruits.push("Banane"); //Ajout de "Banane" à la liste.
+					fruits.push("Pomme"); //Ajout de "Pomme" à la liste.
+					fruits.push("Kiwi"); //Ajout de "Kiwi" à la liste.
+					//Etc...
+
+					fruits.get(0); //Retourne "Banane"
+					
+					fruits.remove("Banane"); //On retire "Banane" de la liste.
+
+					fruits.get(0); //Retourne "Pomme"
+					</code></pre>
 				</section>
 				<section>
-					<h2>Exemple IRL</h2>
+					<h2>Boucler sur une liste</h2>
+					<p>Nous voulons imprimer le contenu de la liste "fruits".
+					<pre><code class="java" data-trim data-noescape>
+					//fruits contient ["Pomme", "Kiwi"]
+					for(int i = 0; i < fruits.size(); i++) {
+						System.out.println(fruits.get(i));
+					}
+					</code></pre>
 				</section>
-			</div>
+			</section>
+			<section>
+				<section>
+					<h2>Boucles de jeu</h2>
+				</section>
+				<section>
+					<h2>Boucles de jeu exercices</h2>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Frames</h2>
+				</section>
+				<section>
+					<h2>Frames Affichage</h2>
+				</section>
+				<section>
+					<h2>Frames Updates</h2>
+				</section>
+			</section>
+			<section>
+				<h2>Exemple IRL</h2>
+			</section>
 		</div>
+	</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
 
-		<script>
+	<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: false,
@@ -254,5 +387,6 @@
 				]
 			});
 		</script>
-	</body>
+</body>
+
 </html>
