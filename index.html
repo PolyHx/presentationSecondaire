@@ -27,10 +27,6 @@
 			border: none!important;
 			box-shadow: 0 0 0!important;
 		}
-		
-		ul {
-			list-style-type: none!important;
-		}
 	</style>
 </head>
 
@@ -52,9 +48,9 @@
 					<h2>Variables</h2>
 					<p class="fragment" data-fragment-index="0" data-markdown>
 						<script type="text/template">
-									Les variables sont utile pour stocker de l'information.
+									Les variables sont utiles pour stocker de l'information.
 
-									Toute les variables se déclare sous la forme : `<uneType> <unNomDeVariable>;`
+									Toute les variables se déclarent sous la forme: `<uneType> <unNomDeVariable>;`
 								</script>
 					</p>
 					<p class="fragment" data-fragment-index="1" data-markdown>
@@ -68,10 +64,9 @@
 					</p>
 				</section>
 				<section>
-					<h3>Variables - opérateurs</h3>
+					<h3>Variables - Opérateurs</h3>
 					<pre><code class="java" data-trim data-noescape>
 						int foo;
-
 						foo = 5 + 1;<span class="fragment" data-fragment-index="0">// foo contient 6</span>
 						foo = 3 - 2;<span class="fragment" data-fragment-index="0">// foo contient 1</span>
 						foo = 2 * 5;<span class="fragment" data-fragment-index="0">// foo contient 10</span>
@@ -98,13 +93,13 @@
 
 						String baz = "Voici une chaine de caractères";
 
-						float booz = 3.141592;
+						float booz = 3.141592f;
 
 						boolean bool = true;
 						</code></pre>
 				</section>
 				<section>
-					<h3>Variables - exercices</h3>
+					<h3>Variables - Exercices</h3>
 					<pre><code class="java" data-trim data-noescape>
 						int foo = 12;
 						int bar = foo = 3;
@@ -122,14 +117,14 @@
 				<section data-markdown>
 					## Expressions booléennes et conditions
 					Valeurs booléennes possibles: true (vrai) et false (faux) 
-					Une expression booléenne est une suite de valeurs booléennes modifiées par des opérateurs logiques (Algèbre de Boole)
+					Une expression booléenne est une opération sur des valeurs booléennes modifiées par des opérateurs logiques (Algèbre de Boole)
 				</section>
 				<section>
 					<h3>Expressions booléennes et conditions - Opérateurs</h3>
 					<table>
 						<thead>
-							<th>Comparaison</th>
-							<th>Opérateurs</th>
+							<th>Opérateurs de comparaison</th>
+							<th>Opérateurs logiques</th>
 						</thead>
 						<tbody>
 							<tr>
@@ -187,30 +182,28 @@
 						// test1 contient true
 						boolean test2 = true && false;
 						// test2 contient false
-						if (test1) { // condition vrai car test1 est true
-						  if (test2) { // si test2 est vrai
+						if (test1) { // condition vraie car test1 est true
+						  if (test2) { // si test2 est vraie
 						    // on ne va pas ici car
 						    // la condition est fausse
-						  }
-						  else { // sinon (si test2 ne contient pas vrai)
+						  } else { // sinon (si test2 ne contient pas vrai)
 						    //on execute le else
 						  }
 						}
 						</code></pre>
 				</section>
 				<section>
-					<h3>Conditions - exercices</h3>
+					<h3>Conditions - Exercice</h3>
 					<pre><code class="java" data-trim data-noescape>
 						int test = 0;
 						
 						if (false || (false && true) || true) {
 						  test = 3;
-						}
-						else {
+						} else {
 						  test = 5
 						}
 						if (test > 3) {
-						  <span class="fragment" data-fragment-index="0">// Est-ce que la condition est vrai?</span>
+						  <span class="fragment" data-fragment-index="0">// Est-ce que la condition est vraie?</span>
 						  <span class="fragment" data-fragment-index="1">// Non, car test vaut 3</span>
 						}
 						</code></pre>
@@ -233,12 +226,12 @@
 					<p>Une boucle <i>for</i> contient à la fois une déclaration de variable, une condition de boucle et une itération</p>
 					<pre><code class="java" data-trim data-noescape>
 						for (int i = 0; i < 100; i++) {
-							//faire autre chose ici
+							//faire quelque chose avec i ici
 						}
 						</code></pre>
 				</section>
 				<section>
-					<h2>Boucles - exercice</h2>
+					<h2>Boucles - Exercice</h2>
 					<ul>
 						<li>Parcourir les nombres de 1 à 100</li>
 						<li>Afficher "fizz" si le nombre est divisible par 5</li>
@@ -248,18 +241,19 @@
 					</ul>
 				</section>
 				<section>
-					<h2>Boucles - exercices</h2>
+					<h2>Boucles - Exercice</h2>
 					<pre><code class="java" data-trim data-noescape>
-						for(int i = 1; i <= 100; i++) {
-						  if (((i % 5) == 0) && ((i % 7) == 0))
-						    System.out.print("fizzbuzz ");
-						  else if ((i % 5) == 0)
-						    System.out.print("fizz ");
-						  else if ((i % 7) == 0)
-						    System.out.print("buzz ");
-						  else
-						    System.out.print(i);
-						}
+						<span class="fragment" data-fragment-index="0">for(int i = 1; i <= 100; i++) {</span>
+						  <span class="fragment" data-fragment-index="1">if (((i % 5) == 0) && ((i % 7) == 0)) {</span>
+						    <span class="fragment" data-fragment-index="1">System.out.println("fizzbuzz");</span>
+						  <span class="fragment" data-fragment-index="2">} else if ((i % 5) == 0) {</span>
+						    <span class="fragment" data-fragment-index="2">System.out.println("fizz");</span>
+						  <span class="fragment" data-fragment-index="3">} else if ((i % 7) == 0) {</span>
+						    <span class="fragment" data-fragment-index="3">System.out.println("buzz");</span>
+						  <span class="fragment" data-fragment-index="4">} else {</span>
+						    <span class="fragment" data-fragment-index="4">System.out.println(i);</span>
+						  <span class="fragment" data-fragment-index="4">}</span>
+						<span class="fragment" data-fragment-index="0">}</span>
 						</code></pre>
 				</section>
 			</section>
@@ -307,7 +301,7 @@
 					<p>Exemple: Une liste de nombres, une liste de mots, etc.</p>
 				</section>
 				<section>
-					<h2>Listes problématique</h2>
+					<h2>Listes - Problématique</h2>
 					<pre><code class="java" data-trim data-noescape>
 						string fruit1 = "Banane";
 						string fruit2 = "Pomme";
@@ -318,9 +312,9 @@
 						</code></pre>
 				</section>
 				<section>
-					<h2>Listes solution</h2>
+					<h2>Listes - Solution</h2>
 					<pre><code class="java" data-trim data-noescape>
-					ArrayList<string> fruits = new ArrayList<>();
+					ArrayList<string> fruits = new ArrayList<string>();
 					fruits.push("Banane"); //Ajout de "Banane" à la liste.
 					fruits.push("Pomme"); //Ajout de "Pomme" à la liste.
 					fruits.push("Kiwi"); //Ajout de "Kiwi" à la liste.
@@ -346,25 +340,156 @@
 			</section>
 			<section>
 				<section>
-					<h2>Boucles de jeu</h2>
+						<h2>Boucles de jeu</h2>
+						<p>La boucle de jeu permet d'afficher le jeu en continu</p>
+						<p>Dans cette boucle, nous exécutons toutes les opérations pour passer d'un état à un autre entre chaque affichage</p>
+					</section>
+					<section>
+						<h2>Exemple d'une boucle de jeu</h2>
+						<pre><code class="java" data-trim data-noescape>
+						// Boucle en continu
+						while (true) {
+						  // Met à jour la position du joueur
+						  player.setPosition(Mouse.getPosition());
+
+						  // Dessine le joueur dans la fenêtre
+						  player.draw();
+						}
+						</code></pre>
+						<p>À chaque itération, la position du joueur se synchronise avec la position de la souris</p>
+					</section>
 				</section>
 				<section>
-					<h2>Boucles de jeu exercices</h2>
+					<section>
+						<h2>Frames</h2>
+						<p>Un frame est une image affichée par la boucle de jeu.</p>
+						<p>Dans les jeux vidéos, on parle souvent de fps (frame per second)</p>
+						<p>La norme des jeux modernes est 60fps, donc la boucle effectue 60 itérations par seconde</p>
+					</section>
+					<section>
+						<h2>Frame suite</h2>
+						<p>Comme mentionné dans la boucle d'exécution, un frame effectue des opérations qui changent l'état du jeu</p>
+						<h4>Exemples d'opérations</h4>
+						<ul>
+							<li>Calcul de la physique</li>
+							<li>Gestion des collisions</li>
+							<li>Calcul de pointages</li>
+							<li>Génération d'obstacles</li>
+							<li>Affichage du jeu</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Exemple</h2>
+						<pre><code class="java" data-trim data-noescape>
+						// Boucle en continu
+						while (true) {
+						  // Calcul de la physique
+						  // Gestion des collisions
+						  // Calcul de pointage
+						  // Génération d'obstacles
+						  player.act();
+
+						  // Affichage du jeu
+						  player.draw();
+						}
+						</code></pre>
+					</section>
 				</section>
-			</section>
-			<section>
 				<section>
-					<h2>Frames</h2>
+					<section>
+						<h2>Explication de notre librairie développée exclusivement pour vous!</h2>
+					</section>
+					<section>
+						<h2>Vecteur</h2>
+						<p>Un vecteur est formé de deux composantes, x et y, dans un plan cartésien qui peut indiquer une position ou une direction</p>
+						<p>Par exemple, dans un jeu, la position du joueur est un vecteur</p>
+						<pre><code class="java" data-trim data-noescape>
+						// Création d'un vecteur
+						Vector2 postion = new Vector2(10, -5);
+						// Le vecteur est à la position x = 10, y = -5
+						</code></pre>
+					</section>
+					<section>
+						<h2>Rectangle</h2>
+						<p>Un rectangle est un composé de 4 composantes, x, y, width, height, qui donnent une position et une dimension dans le plan cartésien</p>
+						<p>Par exemple, un obstacle peut être représenté par un Rectangle dans un jeu</p>
+						<pre><code class="java" data-trim data-noescape>
+						// Création d'un rectangle
+						Rectangle obstacle = new Rectangle(10, -5, 10, 10);
+						// Le Rectangle est à la position x = 10, y = -5
+						// de dimension width = 10, height = 10
+						</code></pre>
+					</section>
+					<section>
+						<h2>Rectangle - Suite</h2>
+						<p>Plusieurs opérations sont possible avec des Rectangles</p>
+						<pre><code class="java" data-trim data-noescape>
+						// Création de rectangles
+						Rectangle obstacle1 = new Rectangle(10, -5, 10, 10);
+						Rectangle obstacle2 = new Rectangle(10, 0, 20, 20);
+
+						// Regarde si les deux rectangles sont superposés
+						obstacle1.overlaps(obstacles2);
+
+						// Regarde si obstacle1 contient obstacles2
+						obstacle1.contains(obstacles2);
+
+						</code></pre>
+					</section>
+					<section>
+						<h2>Clock</h2>
+						<p>Une clock agit comme un chronomètre</p>
+						<pre><code class="java" data-trim data-noescape>
+						// Création de la clock
+						Clock clock = new Clock();
+
+						// Obtiens le temps en secondes écoulées depuis le lancement du
+						// chronomètre
+						clock.getElapsedTime();
+
+						// Relance le chronomètre
+						clock.restart();
+
+						</code></pre>
+					</section>
+					<section>
+						<h2>Sprite Entity</h2>
+						<p>Un sprite entity est une image pouvant être affichée dans la fenêtre de jeu</p>
+						<pre><code class="java" data-trim data-noescape>
+						// Création du sprite
+						SpriteEntity obstacle = new SpriteEntity("obstacle.png");
+
+						// Modification de la position à x = 0, y = 0
+						obstacle.setPosition(new Vector2(0, 0));
+
+						// Afficher le sprite
+						obstacle.draw();
+
+						</code></pre>
+					</section>
+					<section>
+						<h2>Animated Sprite Entity</h2>
+						<p>Un animated sprite entity est une animation 2D pouvant être affichée dans la fenêtre de jeu</p>
+						<pre><code class="java" data-trim data-noescape>
+						// Création du sprite animé
+						AnimatedSpriteEntity player = new AnimatedSpriteEntity("oiseaux.png");
+
+						// Modification de la position à x = 0, y = 0
+						player.setPosition(new Vector2(0, 0));
+
+						// Afficher l'animation
+						player.draw();
+
+						</code></pre>
+					</section>
+					<section>
+						<h2>Exemple d'image pour un Animated Sprite Entity</h2>
+						<img src="img/oiseaux.png">
+					</section>
 				</section>
 				<section>
-					<h2>Frames Affichage</h2>
+					<h2>Exemple avec notre librairie développée exclusivement pour vous!</h2>
 				</section>
-				<section>
-					<h2>Frames Updates</h2>
-				</section>
-			</section>
-			<section>
-				<h2>Exemple IRL</h2>
 			</section>
 		</div>
 	</div>
