@@ -64,26 +64,6 @@
 					</p>
 				</section>
 				<section>
-					<h3>Variables - Opérateurs</h3>
-					<pre><code class="java" data-trim data-noescape>
-						int foo;
-						foo = 5 + 1;<span class="fragment" data-fragment-index="0">// foo contient 6</span>
-						foo = 3 - 2;<span class="fragment" data-fragment-index="0">// foo contient 1</span>
-						foo = 2 * 5;<span class="fragment" data-fragment-index="0">// foo contient 10</span>
-						foo = 4 / 2;<span class="fragment" data-fragment-index="0">// foo contient 2</span>
-						foo = 5 % 2;<span class="fragment" data-fragment-index="0">// foo contient 1</span>
-						
-						foo++;<span class="fragment" data-fragment-index="1">// foo contient 2</span>
-						foo--;<span class="fragment" data-fragment-index="2">// foo contient 1</span>
-
-						foo += 41;<span class="fragment" data-fragment-index="3">// foo contient 42</span>
-						foo -= 12;<span class="fragment" data-fragment-index="4">// foo contient 35</span>
-						foo /= 6;<span class="fragment" data-fragment-index="5">// foo contient 5</span>
-						foo *= 2;<span class="fragment" data-fragment-index="6">// foo contient 10</span>
-						foo %= 7;<span class="fragment" data-fragment-index="7">// foo contient 3</span>
-						</code></pre>
-				</section>
-				<section>
 					<h3>Variables - Mutation</h3>
 					<pre><code class="java" data-trim data-noescape>
 						int foo;                //Déclaration d'une variable
@@ -98,6 +78,27 @@
 						boolean bool = true;
 						</code></pre>
 				</section>
+				<section>
+					<h3>Variables - Opérateurs</h3>
+					<pre><code class="java" data-trim data-noescape>
+						int foo;
+						foo = 5 + 1;<span class="fragment" data-fragment-index="0">// foo contient 6</span>
+						foo = 3 - 2;<span class="fragment" data-fragment-index="0">// foo contient 1</span>
+						foo = 2 * 5;<span class="fragment" data-fragment-index="0">// foo contient 10</span>
+						foo = 4 / 2;<span class="fragment" data-fragment-index="0">// foo contient 2</span>
+						foo = 5 % 2;<span class="fragment" data-fragment-index="0">// foo contient 1</span>
+						
+						foo++;<span class="fragment" data-fragment-index="1">// foo contient 2</span>
+						foo--;<span class="fragment" data-fragment-index="2">// foo contient 1</span>
+
+						foo += 41;<span class="fragment" data-fragment-index="3">// foo contient 42</span>
+						foo -= 12;<span class="fragment" data-fragment-index="4">// foo contient 30</span>
+						foo /= 6;<span class="fragment" data-fragment-index="5">// foo contient 5</span>
+						foo *= 2;<span class="fragment" data-fragment-index="6">// foo contient 10</span>
+						foo %= 7;<span class="fragment" data-fragment-index="7">// foo contient 3</span>
+						</code></pre>
+				</section>
+				
 				<section>
 					<h3>Variables - Exercices</h3>
 					<pre><code class="java" data-trim data-noescape>
@@ -315,9 +316,9 @@
 					<h2>Listes - Solution</h2>
 					<pre><code class="java" data-trim data-noescape>
 					ArrayList<string> fruits = new ArrayList<string>();
-					fruits.push("Banane"); //Ajout de "Banane" à la liste.
-					fruits.push("Pomme"); //Ajout de "Pomme" à la liste.
-					fruits.push("Kiwi"); //Ajout de "Kiwi" à la liste.
+					fruits.add("Banane"); //Ajout de "Banane" à la liste.
+					fruits.add("Pomme"); //Ajout de "Pomme" à la liste.
+					fruits.add("Kiwi"); //Ajout de "Kiwi" à la liste.
 					//Etc...
 
 					fruits.get(0); //Retourne "Banane"
