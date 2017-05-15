@@ -51,11 +51,11 @@
 									Les variables sont utiles pour stocker de l'information.
 
 									Toute les variables se déclarent sous la forme: `<uneType> <unNomDeVariable>;`
-								</script>
+                        </script>
 					</p>
 					<p class="fragment" data-fragment-index="1" data-markdown>
 						<script type="text/template">
-									Les types de bases sont : 
+									Les types de bases sont :
 									- boolean
 									- int
 									- float
@@ -87,7 +87,7 @@
 						foo = 2 * 5;<span class="fragment" data-fragment-index="0">// foo contient 10</span>
 						foo = 4 / 2;<span class="fragment" data-fragment-index="0">// foo contient 2</span>
 						foo = 5 % 2;<span class="fragment" data-fragment-index="0">// foo contient 1</span>
-						
+
 						foo++;<span class="fragment" data-fragment-index="1">// foo contient 2</span>
 						foo--;<span class="fragment" data-fragment-index="2">// foo contient 1</span>
 
@@ -98,7 +98,7 @@
 						foo %= 7;<span class="fragment" data-fragment-index="7">// foo contient 3</span>
 						</code></pre>
 				</section>
-				
+
 				<section>
 					<h3>Variables - Exercices</h3>
 					<pre><code class="java" data-trim data-noescape>
@@ -480,6 +480,21 @@
 
 						// Afficher l'animation
 						player.draw();
+
+						</code></pre>
+					</section>
+					<section>
+						<h2>Mouse</h2>
+						<p>Mouse est un utilitaire permettant d'obtenir certaines informations à propos de la souris</p>
+						<pre><code class="java" data-trim data-noescape>
+						// Obtention de la position de la souris
+						Mouse.getPosition();
+
+						// Pour savoir si le bouton droit de la souris est clické.
+						Mouse.isMouseClick(Input.Buttons.RIGHT);
+
+						// Pour savoir si le bouton gauche de la souris est clické.
+						Mouse.isMouseClick(Input.Buttons.LEFT);
 
 						</code></pre>
 					</section>
